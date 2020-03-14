@@ -1,0 +1,240 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Directory</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+   
+    {% block stylesheets %}
+          <!-- CSS here -->
+          <link rel="stylesheet" href="{{asset('dashboarduser/css/bootstrap.min.css')}}">
+          <link rel="stylesheet" href="{{asset('dashboarduser/css/owl.carousel.min.css')}}">
+          <link rel="stylesheet" href="{{asset('dashboarduser/css/magnific-popup.css')}}">
+          <link rel="stylesheet" href="{{asset('dashboarduser/css/font-awesome.min.css')}}">
+          <link rel="stylesheet" href="{{asset('dashboarduser/css/themify-icons.css')}}">
+          <link rel="stylesheet" href="{{asset('dashboarduser/css/nice-select.css')}}">
+          <link rel="stylesheet" href="{{asset('dashboarduser/css/flaticon.css')}}">
+          <link rel="stylesheet" href="{{asset('dashboarduser/css/gijgo.css')}}">
+          <link rel="stylesheet" href="{{asset('dashboarduser/css/animate.css')}}">
+          <link rel="stylesheet" href="{{asset('dashboarduser/css/slick.css')}}">
+          <link rel="stylesheet" href="{{asset('dashboarduser/css/slicknav.css')}}">
+      
+          <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" rel="stylesheet">
+          <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+                   
+         
+       <link rel="stylesheet" href="{{asset('dashboarduser/css/style.css')}}">
+          <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+
+     {% endblock %}
+  
+    
+   </head>
+
+   
+  <body>
+      {% block body %}
+
+   {% block header %}
+  <!-- header-start -->
+  <header>
+    <div class="header-area " >
+        <div id="sticky-header" class="main-header-area" style="padding: 0px 0px; " >
+            <div class="container-fluid "  style="background-color: #001D38;">
+                <div class="header_bottom_border" >
+                    <div class="row align-items-center"  style="height: 90px;">
+                        <div class="col-xl-3 col-lg-2" >
+                            <div class="logo">
+                                <a href="{{path('index1', {'id': user.id})}}">
+                                    <img src="{{asset('dashboarduser/img/logo.png')}}" alt style="width:20%;">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-7">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                       
+                                      
+                                                
+                                                <li><a href="#"> Trajet</a></li>
+                                                <li><a href="{{path('new_coli', {'id': user.id})}}}">Coli</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class="Appointment">
+                                <a href="#"><span class="fa fa-heart" aria-hidden="true" style="color:#ffff; font-size:15px; padding:20px;"></span></a>
+                               
+                                <a href="#"> <span class="fa fa-bell" aria-hidden="true" style="color:#ffff; font-size:15px; padding:20px; "></span></a>
+                            
+                                <a href="#"><span class="fa fa-envelope" aria-hidden="true" style="color:#ffff; font-size:15px; padding:20px;"></span></a>
+                             
+                             <ul class="navbar-nav">
+                                        <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="{{path('index1', {'id': user.id})}}" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                          <img src="{{ asset('Uploads/Images/'~user.image)}}" width="40" height="40" class="rounded-circle">
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                         
+                                           
+                                          <a class="dropdown-item" href="{{path('dashboard_user', {'id': user.id})}}">Tableau de board</a>
+                                         
+                                          <a class="dropdown-item" href="{{ path('app_logout') }}"><i class="fa fa-power-off mr-2"></i>Déconnexion</a>
+                                        </div>
+                                      </li>   
+                                    </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header-end -->}
+{% endblock %}
+{% block main %} {% endblock %}
+{% block footer %}
+ <!-- footer start -->
+ <footer class="footer">
+    <div class="footer_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-md-6 col-lg-3">
+                    <div class="footer_widget">
+                       
+                        <div class="socail_links">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="ti-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xl-2 col-md-6 col-lg-3">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">
+                            Services
+                        </h3>
+                        <ul>
+                            <li><a href="#">SEO/SEM </a></li>
+                            <li><a href="#">Web design </a></li>
+                            <li><a href="#">Ecommerce</a></li>
+                            <li><a href="#">Digital marketing</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-xl-2 col-md-6 col-lg-2">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">
+                          Liens Utiles
+                        </h3>
+                        <ul>
+                            <li><a href="{{path('Apropos1', {'id': user.id})}}">A propos</a></li>
+                            <li><a href="{{path('contact1', {'id': user.id})}}"> Contact</a></li>
+                            <li><a href="#">Aide</a></li>
+                              <li><a href="#">Support</a></li>
+                              <li><a href="#">Reclamation</a></li>
+                                
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">
+                         Abonnez-Vous
+                        </h3>
+                        <form action="#" class="newsletter_form">
+                            <input type="text" placeholder="Entrer votre email">
+                            <button type="submit">Abonnez-Vous</button>
+                        </form>
+                        <p class="newsletter_text">Esteem spirit temper too say adieus who direct esteem esteems
+                            luckily.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copy-right_text">
+        <div class="container">
+            <div class="footer_border"></div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <p class="copy_right text-center">
+                       
+Copyright copy<script>document.write(new Date().getFullYear())</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="http://www.ama-business.com" target="_blank">AmAbusiness</a>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/ footer end  -->
+{% endblock %}
+{% block javascripts %}
+ <!-- JS here -->
+   <script src="{{asset('dashboarduser/js/vendor/modernizr-3.5.0.min.js')}}"></script>
+   <script src="{{asset('dashboarduser/js/vendor/jquery-1.12.4.min.js')}}"></script>
+   <script src="{{asset('dashboarduser/js/popper.min.js')}}"></script>
+   <script src="{{asset('dashboarduser/js/bootstrap.min.js')}}"></script>
+   <script src="{{asset('dashboarduser/js/owl.carousel.min.js')}}"></script>
+   <script src="{{asset('dashboarduser/js/isotope.pkgd.min.js')}}"></script>
+   <script src="{{asset('dashboarduser/js/ajax-form.js')}}"></script>
+   <script src="{{asset('dashboarduser/js/waypoints.min.js')}}"></script>
+   <script src="{{asset('dashboarduser/js/jquery.counterup.min.js')}}"></script>
+   <script src="{{asset('dashboarduser/js/imagesloaded.pkgd.min.js')}}"></script>
+   <script src="{{asset('dashboarduser/js/scrollIt.js')}}"></script>
+   <script src="{{asset('dashboarduser/js/jquery.scrollUp.min.js')}}"></script>
+   <script src="{{asset('dashboarduser/js/wow.min.js')}}"></script>
+   <script src="{{asset('dashboarduser/js/nice-select.min.js')}}"></script>
+   <script src="{{asset('dashboarduser/js/jquery.slicknav.min.js')}}"></script>
+   <script src="{{asset('dashboarduser/js/jquery.magnific-popup.min.js')}}"></script>
+   <script src="{{asset('dashboarduser/js/plugins.js')}}"></script>
+   <!-- <script src="{{asset('dashboarduser/js/gijgo.min.js')}}"></script> -->
+   <script src="{{asset('dashboarduser/js/slick.min.js')}}"></script>
+
+
+
+  
+{% endblock %}
+{% endblock %}
+
+</body>  
+
+          
+   </html>
+
+
+

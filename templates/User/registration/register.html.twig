@@ -1,0 +1,27 @@
+{% extends 'User/layout.html.twig' %}
+{% block main %}
+
+<body>
+   
+   <div class="container"  style="margin: auto; padding: 10%; background-image:url ('{{ asset('dashboarduser/img/catagory/3.png') }}');">
+ <h1 style="text-align: center;">Inscrivez-Vous </h1><hr>
+         {{ form_start(registrationForm) }}
+      
+      
+   
+
+
+
+ 
+     {{form_widget(registrationForm)}}
+
+{{ form_end(registrationForm) }}
+
+
+  
+</div>
+
+ </body>
+ 
+</html>
+{% endblock %}

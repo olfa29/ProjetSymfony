@@ -1,0 +1,51 @@
+{% extends 'User/layout2.html.twig' %}
+ {% block main %}
+ <table class="table ">
+      <thead>
+         <tr >
+               
+                <th>Point de Depart </th>
+                <th>Point d'arrivée</th>
+                <th>Date de Depart </th>
+                <th>Date d'arrivée </th>
+                <th>heure d'arrivée </th>
+                <th>Size</th>
+                <th>Catégorie</th>
+                <th>Type</th>
+                <th>Prix </th>
+                <th> Photo </th>
+              
+
+
+               
+           
+   </tr>
+      </thead>
+     
+        <tbody>
+      
+          <tr>
+         
+              <td> {{coli. getPointDeDepart()}}</td>
+              <td>{{coli.getPointDArriver()}}</td>
+              <td>{{coli. getDateDeDepart()|date("d/m/Y")}}</td>
+              <td>{{coli. getDateDArriver()|date("d/m/Y")}}</td>
+              <td>{{coli. getHeureDArriver()}}</td>
+              
+              <td>{{coli. getSize()}}</td>
+              
+              <td>{{coli.getCategorie()}}</td>
+               <td>{{coli.getType()}}</td>
+
+
+               <td>{{coli. getPrix()}}</td>
+               <td> <img src="{{ asset('Uploads/Images/'~coli.image)}}" style="width:80px"></td>
+              
+
+  </tr>
+   
+     
+           </tbody>
+        </table>
+
+{% endblock %}

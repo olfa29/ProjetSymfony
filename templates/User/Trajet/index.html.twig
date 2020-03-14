@@ -1,0 +1,51 @@
+{% extends 'User/layout2.html.twig' %}
+
+{% block title %}Trajet{% endblock %}
+
+  {% block main %}
+   <a href=" {{path('new_trajet', {'id': user.id})}}"  class="btn btn-outline-warning" style=" float:right;">+ Ajouter un trajet </a> 
+  <br><br><br>
+  
+ 
+  <div class="container-fluid">
+  {% if trajet is defined %}
+
+  <div class="row" id="trajet">
+ 
+  {% for trajet in trajet %}
+  
+     
+      <div class="col-sm-5 col-md-6" >
+        
+   
+       <figure>
+          <img src="{{asset('Uploads/ImagesTrajet/trajet.jpg')}}" style="width:280px"> 
+         </figure>
+   
+    
+        
+          <h2>
+                
+          <small>De   {{trajet. getPointDeDepart()}} vers  {{trajet.getPointDArriver()}} </small>
+          </h2>
+          <mark>  De {{trajet. getDateDeDepart()|date("d/m/Y")}} à  {{trajet. getDateDArriver()|date("d/m/Y")}}</mark><br>
+         
+         
+     
+          <a href="/trajetShow/{{trajet.getId()}}/{{user.getId()}}"  class="btn btn-outline-info"> Afficher </a> 
+         <a href="/trajetedit/{{trajet.getId()}}/{{user.getId()}}" class="  btn btn-outline-success"> Modifier </a>
+         <a href="/trajet/{{user.getId()}}" class="btn btn-outline-danger delete-trajet"  data-id="{{trajet.id}}"> Supprimer</a>   <br><br>
+         
+      </div>
+    
+    {% endfor %}
+   </div>
+ 
+    {% else %}
+         <p>IL n'y a aucun coli </p>
+         {% endif %}  
+        
+      </div>
+      
+     
+         {% endblock %}

@@ -1,0 +1,3 @@
+# index1:
+#   path: /index1/{id}
+#   defaults: { _controller: user:TemplateController:index1, id: 1 }

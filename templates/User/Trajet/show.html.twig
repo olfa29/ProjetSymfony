@@ -1,0 +1,38 @@
+{% extends 'User/layout2.html.twig' %}
+ {% block main %}
+ <table class="table ">
+      <thead>
+         <tr >
+               
+                <th>Point de Depart </th>
+                <th>Point d'arrivée</th>
+                <th>Date de Depart </th>
+                <th>Date d'arrivée </th>
+                   <th>heure de Depart </th>
+                <th>heure d'arrivée </th>
+               
+
+
+               
+           
+   </tr>
+      </thead>
+     
+        <tbody>
+      
+          <tr>
+         
+              <td> {{trajet. getPointDeDepart()}}</td>
+              <td>{{trajet.getPointDArriver()}}</td>
+              <td>{{trajet. getDateDeDepart()|date("d/m/Y")}}</td>
+              <td>{{trajet. getDateDArriver()|date("d/m/Y")}}</td>
+              <td>{{trajet. getHeureDeDepart()}}</td>
+              <td>{{trajet. getHeureDArriver()}}</td>
+              
+            </tr>
+   
+     
+           </tbody>
+        </table>
+
+{% endblock %}

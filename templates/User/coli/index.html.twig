@@ -1,0 +1,81 @@
+
+{% extends 'User/layout2.html.twig' %}
+
+{% block title %}Coli {% endblock %}
+
+  {% block main %}
+   <a href=" {{path('new_coli', {'id': user.id})}}"  class="btn btn-outline-warning" style=" float:right;">+ Ajouter un coli </a> 
+  <br><br><br>
+  
+ 
+  <div class="container-fluid">
+  {% if coli is defined %}
+
+  <div class="row" id="coli">
+ 
+  {% for coli in coli %}
+  
+     
+      <div class="col-sm-5 col-md-6" >
+         <figure>
+          <img src="{{coli. getPath()}}" style="width:280px"> 
+         </figure>
+   
+    
+        
+          <h2>
+                
+          <small>De   {{coli. getPointDeDepart()}} vers  {{coli.getPointDArriver()}} </small>
+          </h2>
+          <mark>  De {{coli. getDateDeDepart()|date("d/m/Y")}} à  {{coli. getDateDArriver()|date("d/m/Y")}}</mark><br>
+         
+          <span >Le colis à transporter de catégorie  <strong>{{coli.getCategorie()}}</strong></span> <span> et de type <strong> {{coli.getType()}} </strong></span> <span> et il est de taille  <strong> {{coli. getSize()}} </strong></span> <span class="price"> Son prix est fixé à<strong> {{coli. getPrix()}}€</strong> </span><br>
+     
+          <a href="/coliShow/{{coli.getId()}}/{{user.getId()}}"  class="btn btn-outline-info"> Afficher </a> 
+         <a href="/colisedit/{{coli.getId()}}/{{user.getId()}}" class="  btn btn-outline-success"> Modifier </a>
+         <a href="/coli/{{user.getId()}}" class="btn btn-outline-danger delete-colis"  data-id="{{coli.id}}"> Supprimer</a>   <br><br>
+         
+      </div>
+    
+    {% endfor %}
+   </div>
+ 
+    {% else %}
+         <p>IL n'y a aucun coli </p>
+         {% endif %}  
+        
+      </div>
+      <div class="navigation">
+         {{ knp_pagination_render(coli) }}
+     </div>
+     
+         {% endblock %}
+        
+           
+  
+      
+       
+          
+           
+           
+            
+              
+                
+
+            
+              
+          
+   
+    
+    
+    
+      
+    
+   
+              
+    
+   
+
+       
+           
+ 

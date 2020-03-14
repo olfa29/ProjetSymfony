@@ -1,0 +1,74 @@
+
+
+
+{% extends 'User/layout.html.twig' %}
+{% block main %}
+
+  <body>
+     
+   <div class="container" style="margin: auto; padding: 10%;">
+      
+      
+          <div class="col-md-3 col-md-offset-4">
+     
+              <div class="account-box"  style="margin-left: 300px; margin-right: -350px;" >
+               
+                
+                  <div >
+                     <h1 style="text-align: center;">Login</h1>
+                     <hr>
+                  </div>
+                  <form class="form-signin" method="POST" >
+                      {% if error %}
+                      <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                  {% endif %}
+              
+                  {% if app.user %}
+                  <div class="mb-3">
+                   Vous êtes inscrit sous l'email de {{ app.user.username }}
+                      </div>
+                  {% endif %}
+                  <div class="form-group">
+                      <label for="inputEmail">Email address</label>
+                      <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+                  </div>
+                  <div class="form-group">
+                      <label for="inputPassword">Password</label>
+           
+                                <input type="password" name="password" id="inputPassword" class="form-control" required>
+                                <input type="hidden" name="_csrf_token"
+                                value="{{ csrf_token('authenticate') }}">
+   
+                  </div>
+                
+                  <button  class= " btn btn-block mybtn btn-primary tx-tfm" type="submit">   Sign in</button>
+                 
+                  </form>
+                
+                 
+                      <div class="row">
+                          <div class="col-md-6 row-block">
+                              <a href="#" class="btn btn-facebook btn-block">Facebook</a>
+                          </div>
+                          <div class="col-md-6 row-block">
+                              <a href="http://www.jquery2dotnet.com" class="btn btn-google btn-block">Google</a>
+                          </div>
+                      </div>
+                  
+                  <div class="or-box row-block">
+                      <div class="row">
+                          <div class="col-md-12 row-block">
+                              <a href="/register" class="btn btn-primary btn-block">Create New Account</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</body>  
+
+
+    
+   </html>
+   {% endblock %}
